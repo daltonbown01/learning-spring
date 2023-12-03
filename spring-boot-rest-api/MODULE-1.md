@@ -48,3 +48,39 @@
     - Red: Write failing tests to outline desired functionality
     - Green: Implement the simplest code to pass the tests
     - Refactor: Improve the code without failing the tests
+
+## REST
+
+- Representational State Transfer
+- Resource-based
+- CRUD
+    - Create via HTTP POST returns 201 (CREATED)
+    - Read via HTTP GET returns 200 (OK)
+    - Update via HTTP PUT returns 204 (NO DATA)
+    - Delete via HTTP DELETE returns 204 (NO DATA)
+- HTTP = Hypertext Transfer Protocol
+
+## REST in Spring Boot
+
+- Configures and instantiates objects @ boot called Spring beans
+- Component scan phase @ app startup
+- Beans are stored in Spring's IoC container
+
+## Spring Web Controllers
+
+- Annotate with `@RestController` to route API requests to
+- Add methods to these controllers to handle API requests
+    - Annotate with `@GetMapping` to map HTTP GET requests for a specific URI
+- Use `@PathVariable` for path variables
+- Use `ResponseEntity` to deliver the response
+
+## Layered Architecture
+
+- Controller interfaces to the client invoking the API
+- Need to separate concerns => controller can't retrieve the data
+- Repository will handle the data, either an in-memory DB or a persistent DB
+- Spring Boot uses H2 as the in-memory DB
+
+## Spring Data's CrudRepository
+
+- Provides predefined methods for CRUD apps
